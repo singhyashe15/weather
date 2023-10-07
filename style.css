@@ -1,0 +1,178 @@
+*{
+  padding: 0;
+  margin:0;
+}
+
+html{
+  font-size: 10px;
+}
+
+body{
+  background-color: rgb(157, 78, 231);
+}
+.box{
+  display: flex;
+  flex-direction: row;
+  width: 1fr;
+}
+header{
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  position: relative;
+  top:30rem;
+  left: 20rem;
+  width:30rem;
+  height:16rem;
+  box-shadow: inset 6px -6px 2px;
+}
+header .form-box{
+  width:20rem;
+  height:10rem;
+}
+.form-box span{
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+form input{
+  padding: 15px 50px;
+  outline: none;
+  box-shadow: 2px 2px 2px;
+  font-style: italic;
+}
+
+button{
+  padding: 10px 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px;
+  margin-left: 9rem;
+  margin-top: 5px;
+}
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left:65rem;
+  top:20rem;
+  width: 36rem;
+  height: 50rem;
+  background-color: aquamarine;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px .5px;
+  box-decoration-break: clone;
+}
+
+.template{
+  width: 100%;
+  height: 100%;
+}
+
+.wave{
+  opacity: 0.3;
+  position: absolute;
+  top:20%;
+  left: 50%;
+  background: white;
+  margin-left: -25rem;
+  margin-top: -25rem;
+  transform-origin: 50% 40%;
+  border-radius: 43%;
+  animation: drift .3s infinite linear;
+  z-index: 1;
+}
+
+.wave .three{
+  animation: drift .5s infinite linear;
+  z-index: 2;
+  opacity: .2;
+}
+
+.wave .two{
+  animation: drift .7s infinite linear;
+  z-index: 3;
+  opacity: .1;
+}
+
+@keyframes drift {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+.Weather-icon{
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  right: 20%;
+  padding-bottom: 50px;
+}
+.Weather-icon .fa-solid{
+  font-size: 10rem;
+}
+
+.fa-solid, .fas {
+    font-weight: 900;
+    padding-bottom: 50px;
+}
+.info{
+    width: fit-content;
+    position: absolute;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 25%;
+    right: 15%;
+}
+.fa-street-view{
+  animation: rotates 3s linear infinite alternate;
+}
+@keyframes rotates{
+  from{
+    transform: translateX(-0.5rem);
+  }
+  to{
+    transform: translateX(0.5rem);
+  }
+}
+.info p{
+  font-size: 1.5rem;
+  font-weight:700;
+  font-family: cursive;
+  margin-bottom: 1.5rem;
+}
+
+.info .Temp{
+  font-size: 1.8rem;
+  font-weight:700;
+  font-family: cursive;
+  margin-bottom: 1.5rem;
+}
+
+.info span{
+  font-size: 1.5rem;
+  font-weight:700;
+  font-family: cursive;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width:400px) and (max-width:800px){
+  .box{
+    flex-direction: row;
+  }
+  header{
+    top:10rem;
+    left:10rem;
+  }
+  main{
+    top:50rem;
+    left:10rem;
+    /* top:20rem; */
+    
+  }
+}
