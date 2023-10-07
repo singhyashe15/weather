@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+  <title>Weather Project</title>
+</head>
+<body>
+  <div class="box">
+    <div class="box-1">
+      <header>
+        <div class="form-box">
+          <span><i>Enter the location:</i></span>
+          <form action="/login" method="POST">
+            <div>
+              <input type="text" name="name" />
+            </div>
+            <div>
+              <button>Submit</button>
+            </div>
+          </form>
+        </div>
+      </header>
+    </div>
+    <div class="box-2">
+      <main>
+        <div class="template">
+          <div class="wave one"></div>
+          <div class="wave two"></div>
+          <div class="wave three"></div>
+          <div class="Weather-icon">
+            <!-- <i class="fa-solid fa-cloud-showers-heavy" style="font-size: 10rem; color: white;"></i>; -->
+            <!-- <i class="fa-brands fa-twitter"></i> -->
+            <i class="fa-solid fa-cloud"></i>
+            <!-- {%image%} -->
+           </div>
+          <div class="info">
+            <h1 class="location"><i class="fa-solid fa-street-view"></i>{%location%}</h1>
+            <p class="Date">
+              Sept 18 || Mon || 11:00:00
+            </p>
+            <h1 class="Temp">{%tempval%}&deg;C</h1>
+            <span>Max:{%tempvalmax%}&deg;C</span>
+            <span>Min:{%tempvalmin%}&deg;C</span>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/3e6a13145a.js" crossorigin="anonymous"></script>
+  <script>
+  
+    const currDate = document.querySelector('.Date');
+const currIcon = document.querySelector('.Weather-icon');
+// const imageTag = document.querySelector('.weather-icon')
+// const tempIcon = "{%tempIcon%}";
+// console.log(tempIcon);
+
+// if(icon == "Sunny")
+// {
+//   currIcon.innerHTML = "<i class='fa-thin fa-sun fa-fade fa-2xl'></i>";
+// }
+// else if(icon == "Clouds")
+// {
+//   currIcon.innerHTML = <i class='fa-regular fa-cloud'></i>;
+// }
+// else if(icon == "Rainy")
+// {
+//   currIcon.innerHTML = "<i class='fa-solid fa-cloud-showers-heavy'></i>";
+// }
+// else
+// {
+//   currIcon.innerHTML = <i class="fa-light fa-sun"></i>;
+// }
+const currDay = ()=>{
+  var DayArrray = [
+    "Sun","Mon","Tues","Wed","Thurs","Fri","Sat"
+  ];
+  let currday = new Date().getDay();
+
+  return DayArrray[currday];
+};
+
+
+const currTime = ()=>{
+  var Month = [
+    "Jan","Feb","Mar","Aprl","May","Jun","July","Aug","Sept","Oct","Nov","Dec"];
+
+    const currmonth = new Date().getMonth();
+    const currDate = new Date().getDate();
+    const currHours = new Date().getHours();
+    const currMin = new Date().getMinutes();
+    const currSec = new Date().getSeconds();
+
+    if(currMin < 10)
+    {
+      currMin = "0" + currMin;
+    }
+    if(currSec < 10)
+    {
+      currSec = "0" + currSec;
+    }
+    // console.log(Month[currmonth]);
+
+    return `${Month[currmonth]}${currDate} || ${currHours}:${currMin}:${currSec} ||`;
+}
+
+currDate.innerHTML = currTime() + currDay();
+  </script>
+</body>
+</html>
