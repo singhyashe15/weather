@@ -27,9 +27,6 @@
     <div class="box-2">
       <main>
         <div class="template">
-          <div class="wave one"></div>
-          <div class="wave two"></div>
-          <div class="wave three"></div>
           <div class="Weather-icon">
             <!-- <i class="fa-solid fa-cloud-showers-heavy" style="font-size: 10rem; color: white;"></i>; -->
             <!-- <i class="fa-brands fa-twitter"></i> -->
@@ -50,10 +47,10 @@
     </div>
   </div>
   <script src="https://kit.fontawesome.com/3e6a13145a.js" crossorigin="anonymous"></script>
-  <script>
+  <script src="script.js">
   
-    const currDate = document.querySelector('.Date');
-const currIcon = document.querySelector('.Weather-icon');
+    //const currDate = document.querySelector('.Date');
+//const currIcon = document.querySelector('.Weather-icon');
 // const imageTag = document.querySelector('.weather-icon')
 // const tempIcon = "{%tempIcon%}";
 // console.log(tempIcon);
@@ -74,40 +71,40 @@ const currIcon = document.querySelector('.Weather-icon');
 // {
 //   currIcon.innerHTML = <i class="fa-light fa-sun"></i>;
 // }
-const currDay = ()=>{
-  var DayArrray = [
-    "Sun","Mon","Tues","Wed","Thurs","Fri","Sat"
-  ];
-  let currday = new Date().getDay();
+// const currDay = ()=>{
+//   var DayArrray = [
+//     "Sun","Mon","Tues","Wed","Thurs","Fri","Sat"
+//   ];
+//   let currday = new Date().getDay();
 
-  return DayArrray[currday];
-};
+//   return DayArrray[currday];
+// };
 
 
-const currTime = ()=>{
-  var Month = [
-    "Jan","Feb","Mar","Aprl","May","Jun","July","Aug","Sept","Oct","Nov","Dec"];
+// const currTime = ()=>{
+//   var Month = [
+//     "Jan","Feb","Mar","Aprl","May","Jun","July","Aug","Sept","Oct","Nov","Dec"];
 
-    const currmonth = new Date().getMonth();
-    const currDate = new Date().getDate();
-    const currHours = new Date().getHours();
-    const currMin = new Date().getMinutes();
-    const currSec = new Date().getSeconds();
+//     const currmonth = new Date().getMonth();
+//     const currDate = new Date().getDate();
+//     const currHours = new Date().getHours();
+//     const currMin = new Date().getMinutes();
+//     const currSec = new Date().getSeconds();
 
-    if(currMin < 10)
-    {
-      currMin = "0" + currMin;
-    }
-    if(currSec < 10)
-    {
-      currSec = "0" + currSec;
-    }
-    // console.log(Month[currmonth]);
+//     if(currMin < 10)
+//     {
+//       currMin = "0" + currMin;
+//     }
+//     if(currSec < 10)
+//     {
+//       currSec = "0" + currSec;
+//     }
+//     // console.log(Month[currmonth]);
 
-    return `${Month[currmonth]}${currDate} || ${currHours}:${currMin}:${currSec} ||`;
-}
+//     return `${Month[currmonth]}${currDate} || ${currHours}:${currMin}:${currSec} ||`;
+// }
 
-currDate.innerHTML = currTime() + currDay();
-  </script>
+// currDate.innerHTML = currTime() + currDay();
+//   </script>
 </body>
 </html>
