@@ -1,4 +1,5 @@
 const currDate = document.querySelector('.Date');
+const Time = document.querySelector('.Time');
 const currIcon = document.querySelector('.Weather-icon');
 
 // const tempIcon = "{%tempIcon%}";
@@ -20,13 +21,14 @@ const currIcon = document.querySelector('.Weather-icon');
 // {
 //   currIcon.innerHTML = <i class="fa-light fa-sun"></i>;
 // }
-const currDay = ()=>{
-  var DayArrray = [
-    "Sun","Mon","Tues","Wed","Thurs","Fri","Sat"
-  ];
-  let currday = new Date().getDay();
-
-  return DayArrray[currday];
+const CurrDate = ()=>{
+  var Month = [
+    "Jan","Feb","Mar","Aprl","May","Jun","July","Aug","Sept","Oct","Nov","Dec"];
+    
+    const currmonth = new Date().getMonth();
+    console.log(currmonth);
+    const currDate = new Date().getDate();
+  return `${Month[currmonth]}  ${currDate}`;
 };
 
 
@@ -51,7 +53,8 @@ const currTime = ()=>{
     }
     // console.log(Month[currmonth]);
 
-    return `${Month[currmonth]}${currDate} || ${currHours}:${currMin}:${currSec} ||`;
+    return `${currHours}:${currMin}:${currSec}`;
 }
 
-currDate.innerHTML = currTime() + currDay();
+currDate.innerHTML = currTime();
+Time.innerHTML = currTime();
